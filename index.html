@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cric🏏Fun</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.4.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+      body {
+        font-family: "Space Grotesk", sans-serif;
+        min-height: 100vh;
+      }
+    </style>
+  </head>
+
+  <body id="body">
+    <nav>
+      <div
+        class="w-11/12 shadow-2xl flex flex-wrap items-center justify-between mx-auto bg-slate-200 rounded-lg py-1 px-3 my-1 animate__animated animate__backInDown"
+      >
+        <h1
+          class="font-bold text-3xl animate__animated animate__backInLeft animate__delay-1s"
+        >
+          🏏Cric-Fun
+        </h1>
+        <div class="flex gap-5">
+          <!-- light-green  -->
+          <div
+            onclick="bgLightGreen()"
+            class="w-12 h-12 cursor-pointer rounded-full border border-gray-900 bg-green-100"
+          ></div>
+          <!-- off white  -->
+          <div
+            onclick="bgHalkaBlue()"
+            class="w-12 h-12 cursor-pointer rounded-full border border-gray-900 bg-blue-100"
+          ></div>
+
+          <div
+            onclick="bgWhite()"
+            class="w-12 h-12 cursor-pointer rounded-full border border-gray-900 bg-white"
+          ></div>
+          <div
+            class="w-12 h-12 rounded-full border border-gray-900 bg-gradient-to-tr from-red-700 to-blue-800"
+          ></div>
+        </div>
+        <div class="m-2 p-3 bg-cyan-300 font-bold rounded-lg shadow-inner">
+          🪙 <span id="my-point">100</span>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="w-11/12 mx-auto py-5 min-h-screen">
+        <h1 class="font-bold text-3xl text-center pt-5">
+          Vote Your AllRounder 🏆🏏
+        </h1>
+        <div
+          id="player-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 py-10"
+        >
+          <!-- Max-Well  -->
+          <div>
+            <div class="player shadow-lg flex items-center gap-3 border p-3">
+              <figure>
+                <img
+                  src="https://www.cricbuzz.com/a/img/v1/152x152/i1/c352454/glenn-maxwell.jpg"
+                  alt=""
+                  class="rounded-lg"
+                />
+              </figure>
+              <div>
+                <div
+                  class="m-2 p-3 inline-flex bg-cyan-300 font-bold rounded-lg shadow-inner"
+                >
+                  🪙 <span id="max-wells-point">0</span>
+                </div>
+                <h2 class="text-2xl">Glenn Maxwell</h2>
+                <p>Australlia</p>
+                <button
+                  id="max-well"
+                  class="btn btn-xs mt-3 text-white btn-info"
+                >
+                  Donate 5 🪙
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Virat Kohli  -->
+          <div>
+            <div class="player shadow-lg flex items-center gap-3 border p-3">
+              <figure>
+                <img
+                  src="https://www.cricbuzz.com/a/img/v1/152x152/i1/c332891/virat-kohli.jpg"
+                  alt=""
+                  class="rounded-lg"
+                />
+              </figure>
+              <div>
+                <div
+                  class="m-2 p-3 inline-flex bg-cyan-300 font-bold rounded-lg shadow-inner"
+                >
+                  🪙 <span id="virats-point">0</span>
+                </div>
+                <h2 class="text-2xl">Virat Kohli</h2>
+                <p>India</p>
+                <button id="virat" class="btn btn-xs mt-3 text-white btn-info">
+                  Donate 5 🪙
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Shakib -->
+          <div>
+            <div class="player shadow-lg flex items-center gap-3 border p-3">
+              <figure>
+                <img
+                  src="https://www.cricbuzz.com/a/img/v1/152x152/i1/c351919/shakib-al-hasan.jpg"
+                  alt=""
+                  class="rounded-lg"
+                />
+              </figure>
+              <div>
+                <div
+                  class="m-2 p-3 inline-flex bg-cyan-300 font-bold rounded-lg shadow-inner"
+                >
+                  🪙 <span id="sakibs-point">0</span>
+                </div>
+                <h2 class="text-2xl">Shakib Al Hasan</h2>
+                <p>Bangladesh</p>
+                <button id="sakib" class="btn btn-xs mt-3 text-white btn-info">
+                  Donate 5 🪙
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sticky glass py-3 bottom-0 w-full">
+        <div
+          class="mx-auto w-11/12 text-center inline-flex gap-5 justify-center flex-wrap items-end"
+        >
+          <button id="earn-btn" class="btn text-white btn-info">
+            Earn 100 🪙
+          </button>
+          <button class="btn text-white btn-error">Reset 🪙</button>
+
+          <div class="">
+            <h2 class="text-lg font-bold">Add Your Favourite Player</h2>
+            <div class="form-control">
+              <div class="space-x-3 space-y-3">
+                <input
+                  id="input-name"
+                  type="text"
+                  placeholder="Player Name"
+                  class="input input-bordered"
+                  required
+                />
+                <input
+                  type="text"
+                  id="input-country"
+                  placeholder="Player Country"
+                  class="input input-bordered"
+                  required
+                />
+                <input
+                  type="text"
+                  id="input-image"
+                  placeholder="Player Image"
+                  class="input input-bordered"
+                  required
+                />
+                <button id="submit-btn" class="btn text-white btn-info">
+                  Add Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
