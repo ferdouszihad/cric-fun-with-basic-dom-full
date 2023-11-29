@@ -1,4 +1,4 @@
-# Cric-Fun
+## Cric-Fun
 
 Welcome to Cric-Fun, a project developed with HTML, CSS, JavaScript, Tailwind CSS, and DaisyUI. This project is designed to help you understand the DOM (Document Object Model) and practice essential web development skills.
 
